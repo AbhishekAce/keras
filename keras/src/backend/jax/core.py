@@ -428,3 +428,13 @@ def device_scope(device_name):
     else:
         jax_device = device_name
     return jax.default_device(jax_device)
+
+def eye(n, m=None, k=0, dtype=None):
+    n = int(n)
+    if m is not None:
+        m = int(m)
+    dtype = standardize_dtype(dtype or "float32")
+    return jnp.eye(N=n, M=m, k=k, dtype=dtype)
+
+
+
